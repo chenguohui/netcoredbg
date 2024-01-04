@@ -19,6 +19,9 @@ BuildRequires: clang-accel-aarch64-cross-aarch64
 %ifarch riscv64
 BuildRequires: clang-accel-riscv64-cross-riscv64
 %endif
+%ifarch loongarch64
+BuildRequires: clang-accel-loongarch64-cross-loongarch64
+%endif
 
 BuildRequires: cmake
 BuildRequires: clang >= 3.8
@@ -71,6 +74,10 @@ Requires: coreclr
 
 %ifarch riscv64
 %define ARCH RISCV64
+%endif
+
+%ifarch loongarch64
+%define ARCH LOONGARCH64
 %endif
 
 %description
